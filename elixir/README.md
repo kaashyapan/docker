@@ -1,17 +1,31 @@
 # Elixir workspace
 
-  With emacs, node  and postgres,
+  With emacs & node,
 
-	To persist postgres data on host,
+  First start the postgres instance as 
+```
+                  docker run --rm --name postgres -d \
+                  -v $HOME/workspace/postgres/:/var/lib/postgresql/ \
+                  -e 'POSTGRES_USER=postgres' \
+                  -e 'POSTGRES_PASSWORD=postgres' \
+                  -e 'POSTGRES_ENCODING=UNICODE' \
+                  blacklabelops/postgres
+```
 
-	1) First run the image overriding CMD with /bin/bash
-	2) Inside the container, drop and create new cluster. This creates the necessary directories on the mounted host directory.
-	3) Exit and run the image with the command below.
-
+  Start elixir instance with
 
 ```
-  alias elixir='docker run --name elixir -it --rm -p 80:4000 \
-                -v $HOME/workspace/elixir:/root -v $HOME/workspace/postgres/:/var/lib/postgresql \
-                 sundernarayanaswamy/elixir-dev'
+                  docker run --name elixir -it --rm --link postgres -p 80:4000 \
+                  -v $HOME/workspace/elixir:/root sundernatayanaswamy/elixir-dev
+```
+
+  Install hex & phoenix and you are good.
 
 ```
+	$ mix local.hex
+        $ mix archive.install https://github.com/phoenixframework/archives/raw/master/phx_new.ez
+```
+
+  Remember to replace the host on config/dev.exs with the IP at which postgres is running
+
+  You can query this from within the elixir container with $ env
