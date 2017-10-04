@@ -31,6 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     elixir
      javascript
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
@@ -38,9 +39,7 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      ivy
-     elixir
      elm
-     erlang
      javascript
      html
      auto-completion
@@ -320,8 +319,13 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
- ;; (global-aggressive-indent-mode 1)
- ;; (add-to-list 'aggressive-indent-excluded-modes 'elm-mode)
+  (global-hl-line-mode -1)
+  (global-aggressive-indent-mode 1)
+  (add-hook 'elm-mode-hook
+            (lambda() (global-aggressive-indent-mode -1))
+            't
+            )
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
