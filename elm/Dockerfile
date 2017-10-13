@@ -1,4 +1,4 @@
-FROM node:slim
+FROM node
 
 MAINTAINER sunder.narayanaswamy@gmail.com
 
