@@ -1,12 +1,15 @@
-FROM golang:alpine
+FROM golang
 
-RUN apk --no-cache update && \
-    apk --no-cache add bash bash-doc bash-completion curl emacs git && \
-    rm -rf /var/cache/apk/*
+RUN apt-get update && apt-get install -y emacs git zip 
 
-WORKDIR /home
+RUN apt-get -y autoremove && \
+    apt-get -y clean  && \
+    apt-get -y autoclean  && \
+    rm -rf /var/lib/apt/lists/*
 
-ENV GOPATH /home/go
-ENV GOROOT /usr/local/go
+WORKDIR /root
 
-CMD /bin/bash
+ENV MYGOPATH /go
+ENV MYGOROOT /usr/local/go
+
+CMD export GOPATH=$MYGOPATH && export GOROOT=$MYGOROOT && /bin/bash

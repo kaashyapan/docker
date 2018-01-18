@@ -2,9 +2,11 @@ FROM eawsy/aws-lambda-go-shim
 
 MAINTAINER sunder.narayanaswamy@gmail.com
 
-ENV GOPATH /home/me/workspace/golang/go
+ENV GOPATH /home/gopath
 ENV GOROOT /usr/local/go
 
-WORKDIR /home/me/workspace/golang
+WORKDIR /home/workspace
 
-CMD  export PATH=$PATH:$GOPATH/bin && /bin/bash
+CMD  bash -c 	"export PATH=$PATH:$GOPATH/bin && \
+	      	go build -buildmode=plugin -o handler.so && \ 
+		pack handler handler.so handler.zip"
