@@ -4,7 +4,7 @@ MAINTAINER sunder.narayanaswamy@gmail.com
 
 RUN bash -c "curl -sL https://deb.nodesource.com/setup_6.x | bash -"
                     
-RUN apt-get update && apt-get install -y nodejs inotify-tools emacs git tree build-essentials silversearcher-ag
+RUN apt-get update && apt-get install -y nodejs inotify-tools emacs git tree silversearcher-ag
 
 RUN yarn global add firebase-tools bs-platform \ 
                     elm elm-test elm-format elm-oracle \
