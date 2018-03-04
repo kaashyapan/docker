@@ -2,13 +2,13 @@ FROM microsoft/dotnet
 
 MAINTAINER sunder.narayanaswamy@gmail.com
 
-RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+RUN bash -c "curl -sL https://deb.nodesource.com/setup_6.x | bash -"
+                    
+RUN apt-get update && apt-get install -y nodejs inotify-tools emacs git tree build-essentials silversearcher-ag
 
 RUN yarn global add firebase-tools bs-platform \ 
                     elm elm-test elm-format elm-oracle \
                     tern js-beautify jshint 
-                    
-RUN apt-get update && apt-get install -y emacs git tree build-essentials silversearcher-ag
 
 RUN apt-get -y autoremove && \
     apt-get -y clean  && \
@@ -16,7 +16,7 @@ RUN apt-get -y autoremove && \
     rm -rf /var/lib/apt/lists/*
 
 # http server to be tied to port 80
-EXPOSE 3000
+EXPOSE 8080
 
 # websocket ports for brunch watch
 EXPOSE 9485-9495
