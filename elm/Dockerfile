@@ -1,13 +1,14 @@
-FROM node
+FROM microsoft/dotnet
 
 MAINTAINER sunder.narayanaswamy@gmail.com
 
-RUN yarn global add brunch firebase-tools google-closure-compiler-js \ 
-                    elm elm-test elm-css elm-format@exp elm-oracle \
-                    tern js-beautify jshint browser-sync \
-		    purescript pulp bower 
+RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+
+RUN yarn global add firebase-tools bs-platform \ 
+                    elm elm-test elm-format elm-oracle \
+                    tern js-beautify jshint 
                     
-RUN apt-get update && apt-get install -y emacs git silversearcher-ag
+RUN apt-get update && apt-get install -y emacs git tree build-essentials silversearcher-ag
 
 RUN apt-get -y autoremove && \
     apt-get -y clean  && \
