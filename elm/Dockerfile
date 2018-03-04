@@ -2,7 +2,7 @@ FROM microsoft/dotnet
 
 MAINTAINER sunder.narayanaswamy@gmail.com
 
-RUN bash -c "curl -sL https://deb.nodesource.com/setup_6.x | bash -"
+RUN bash -c "curl -sL https://deb.nodesource.com/setup_8.x | bash -"
                     
 RUN apt-get update && apt-get install -y nodejs inotify-tools emacs git tree silversearcher-ag
 
