@@ -21,10 +21,10 @@ RUN apk update && apk upgrade && apk add elixir elixir-doc zsh sudo \
 #                     rust rust-dbg rust-doc cargo cargo-doc cargo-zsh-completion \
                       --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted
 
-RUN npm install -g npm@latest jshint js-beautify tern \
+# RUN npm install -g jshint js-beautify tern \
 #                   elm elm-format elm-oracle elm-test \
-	           bs-platform@3.0.0 reason-cli \
-		   webpack webpack-cli \
+# 	           bs-platform@3.0.0 reason-cli \
+#   		   webpack webpack-cli \
                    --unsafe-perm
 
 EXPOSE 4000
