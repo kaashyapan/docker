@@ -19,7 +19,7 @@ RUN apk update && apk upgrade && apk add build-base \
                       go go-doc go-tools \
                       opam \
                       sqlite \
-                      reason reason-merlin reason-rtop reason-rebuild reason-reactjs \
+#                     reason reason-merlin reason-rtop reason-rebuild reason-reactjs \
 #                     rust rust-dbg rust-doc cargo cargo-doc cargo-zsh-completion \
                       --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted
 
