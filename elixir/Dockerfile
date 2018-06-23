@@ -24,9 +24,9 @@ RUN apk update && apk upgrade && apk add build-base \
                       --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted
 
 RUN npm install -g jshint js-beautify tern \
-#                   elm elm-format elm-oracle elm-test \
-# 	           bs-platform@3.0.0 reason-cli \
-#   		   webpack webpack-cli \
+                   elm elm-format elm-oracle \
+      	           bs-platform@3.0.0 reason-cli \
+            		   webpack webpack-cli \
                    --unsafe-perm
 
 EXPOSE 4000
