@@ -2,7 +2,8 @@ FROM frolvlad/alpine-glibc
 
 MAINTAINER sunder.narayanaswamy@gmail.com
 
-RUN apk update && apk upgrade && apk add elixir elixir-doc zsh sudo \
+RUN apk update && apk upgrade && apk add gcc \
+                      elixir elixir-doc zsh sudo \
                       emacs-nox \
                       nodejs \
                       the_silver_searcher jq \
