@@ -3,7 +3,17 @@ FROM frolvlad/alpine-glibc
 MAINTAINER sunder.narayanaswamy@gmail.com
 
 RUN apk update && apk upgrade && apk add build-base \
-                      erlang erlang-dev \
+                      erlang erlang-asn1 erlang-common-test erlang-compiler erlang-cosevent \
+                      erlang-coseventdomain erlang-cosfiletransfer erlang-cosnotification \
+                      erlang-cosproperty erlang-costime erlang-costransaction erlang-crypto \
+                      erlang-debugger erlang-dev erlang-dialyzer erlang-diameter erlang-edoc \
+                      erlang-erl-interface erlang-erts erlang-et erlang-eunit \
+                      erlang-hipe erlang-ic erlang-inets erlang-jinterface \
+                      erlang-kernel erlang-megaco erlang-mnesia erlang-observer \
+                      erlang-odbc erlang-orber erlang-os-mon erlang-otp-mibs \
+                      erlang-parsetools erlang-public-key erlang-reltool erlang-runtime-tools \
+                      erlang-sasl erlang-snmp erlang-ssh erlang-ssl \
+                      erlang-stdlib erlang-syntax-tools erlang-tools erlang-xmerl \
                       elixir elixir-doc \
                       zsh sudo \
                       emacs-nox \
