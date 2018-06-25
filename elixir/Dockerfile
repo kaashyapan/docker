@@ -3,7 +3,9 @@ FROM frolvlad/alpine-glibc
 MAINTAINER sunder.narayanaswamy@gmail.com
 
 RUN apk update && apk upgrade && apk add build-base \
-                      elixir elixir-doc zsh sudo \
+                      erlang erlang-dev \
+                      elixir elixir-doc \
+                      zsh sudo \
                       emacs-nox \
                       nodejs \
                       the_silver_searcher jq \
