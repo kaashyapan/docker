@@ -1,4 +1,4 @@
-FROM docker pull microsoft/dotnet
+FROM microsoft/dotnet
 
 MAINTAINER sunder.narayanaswamy@gmail.com
 
@@ -8,9 +8,9 @@ RUN "curl -sL https://deb.nodesource.com/setup_8.x | bash -"
 RUN apt-get update && \
 		apt-get install -y --no-install-recommends \
 		zsh sudo emacs25-nox \
-    silversearcher-ag jq \
-    tree git curl wget \
-    zip unzip gzip bzip2 unrar \
+    		silversearcher-ag jq \
+    		tree git curl wget \
+    		zip unzip gzip bzip2 unrar \
 		build-essential \
 		postgresql-client \
 		inotify-tools \
