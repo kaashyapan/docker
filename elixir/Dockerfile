@@ -7,7 +7,7 @@ RUN apt-get update && \
 		zsh sudo emacs25-nox \
     		silversearcher-ag jq \
     		tree git curl wget \
-    		zip unzip gzip bzip2 unrar \
+    		zip unzip gzip bzip2 \
 		build-essential \
 		postgresql-client \
 		inotify-tools
